@@ -52,8 +52,8 @@ public class NematodeVisualiser extends PApplet
 		noFill();
         textAlign(CENTER, CENTER);
         textSize(20);
-		int xPosition = width/2;
-		int yPosition = 80;
+		float xPosition = width/2;
+		float yPosition = 80;
 
 		//line(xPosition, yPosition, xPosition+100, yPosition+200);
 		//rect(xPosition, yPosition, 220, 100);
@@ -67,6 +67,12 @@ public class NematodeVisualiser extends PApplet
 				text(n.getName(), 20, 20);
 				for(int i = 0; i < n.getLength(); i++)
 				{
+					if(n.getLimbs() == 1)
+					{
+						line(xPosition-10, yPosition, xPosition - 20, yPosition);
+						line(xPosition+10, yPosition, xPosition +20, yPosition);
+
+					}
 					stroke(255, 0, 255);
 					circle(xPosition, yPosition, 20);
 					yPosition = yPosition +20;
