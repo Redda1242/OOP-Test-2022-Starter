@@ -87,6 +87,27 @@ public class NematodeVisualiser extends PApplet
 
 				}
 
+				if(n.getGender().contains("m"))
+				{
+					line(xPosition, yPosition, xPosition, yPosition+20);
+					circle(xPosition,yPosition+20 , 10);
+				}
+
+				if(n.getGender().contains("f"))
+				{
+					
+					circle(xPosition,yPosition , 10);
+				}
+
+				if(n.getGender().contains("h"))
+				{
+					
+					circle(xPosition, yPosition, 10);
+					line(xPosition, yPosition, xPosition, yPosition+20);
+					circle(xPosition,yPosition+20 , 10);
+				
+				}
+
 				
 				text(n.getName(), 20, 20);
 			}
@@ -96,6 +117,6 @@ public class NematodeVisualiser extends PApplet
 
 	public void draw()
 	{	
-		drawNematode(0);
+		drawNematode(7);
 	}
 }
