@@ -61,14 +61,15 @@ public class NematodeVisualiser extends PApplet
 		for(Nematode n: nematode)
 		{
 			n.toString();
-			text(n.getName(), 20, 20);
+			
 			yPosition = 80;
 			if(index == nematode.indexOf(n))
+				text(n.getName(), 20, 20);
 				for(int i = 0; i < n.getLength(); i++)
 				{
 					stroke(255, 0, 255);
 					circle(xPosition, yPosition, 20);
-					yPosition = yPosition * 2;
+					yPosition = yPosition +20;
 
 				}
 		}
