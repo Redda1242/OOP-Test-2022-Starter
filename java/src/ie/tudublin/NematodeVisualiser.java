@@ -27,13 +27,14 @@ public class NematodeVisualiser extends PApplet
 	{
 		colorMode(HSB);
 		background(0);
-		smooth();				
+		smooth();	
+		loadNematodes();			
 	}
 	
 
 	public void loadNematodes()
 	{
-		Table table = loadTable("nematode.csv", "header");
+		Table table = loadTable("nematodes.csv", "header");
         for(TableRow r:table.rows())
         {
             Nematode n = new Nematode(r);
@@ -59,21 +60,23 @@ public class NematodeVisualiser extends PApplet
 		
 		for(Nematode n: nematode)
 		{
+			n.toString();
+			text(n.getName(), 20, 20);
 			yPosition = 80;
 			if(index == nematode.indexOf(n))
-			for(int i = 0; i < n.getLength(); i++)
-			{
-				stroke(255, 0, 255);
-				circle(xPosition, yPosition, 20);
-				yPosition = yPosition * 2;
+				for(int i = 0; i < n.getLength(); i++)
+				{
+					stroke(255, 0, 255);
+					circle(xPosition, yPosition, 20);
+					yPosition = yPosition * 2;
 
-			}
+				}
 		}
 	}
 
 
 	public void draw()
 	{	
-		
+		drawNematode(0);
 	}
 }

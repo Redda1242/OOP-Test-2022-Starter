@@ -9,7 +9,7 @@ public class Nematode {
     private String name;
     private int length;
     private int limbs;
-    private char gender;
+    private String gender;
     private int eyes;
 
     public String toString() {
@@ -19,15 +19,17 @@ public class Nematode {
     
     public Nematode(TableRow r)
     {      
-        r.getString("name");
-        r.getInt("length");
-        r.getInt("limbs");
-        r.getString("gender");
-        r.getInt("eyes");
+        this(
+            r.getString("name"),
+            r.getInt("length"),
+            r.getInt("limbs"),
+            r.getString("gender"),
+            r.getInt("eyes")
+        );
     }
     
 
-    public Nematode(String name, int length, int limbs, char gender, int eyes)
+    public Nematode(String name, int length, int limbs, String gender, int eyes)
     {
         this.name = name;
         this.length = length;
@@ -35,6 +37,7 @@ public class Nematode {
         this.gender = gender;
         this.eyes = eyes;
     }
+
 
     public String getName() {
         return name;
