@@ -16,16 +16,16 @@ public class Nematode {
         return "Nematode {name: " + name + " length: " + length + "limbs: " + limbs +
                 " gender: " + gender + " eyes : " + eyes;
     }
-    /*
+    
     public Nematode(TableRow r)
     {      
-        tr.getString("name");
-        tr.getInt("length");
-        tr.getInt("limbs");
-        tr.getChar("gender");
-        tr.getInt("eyes");
+        r.getString("name");
+        r.getInt("length");
+        r.getInt("limbs");
+        r.getString("gender");
+        r.getInt("eyes");
     }
-    */
+    
 
     public Nematode(String name, int length, int limbs, char gender, int eyes)
     {
