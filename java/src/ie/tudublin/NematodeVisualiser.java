@@ -15,13 +15,31 @@ public class NematodeVisualiser extends PApplet
 	{		
 		if (keyCode == LEFT)
 		{
-			index -= 1;
-			drawNematode(index);
+			if(index != 0)
+			{	
+				index -= 1;
+				draw();
+			}
+			else
+			{
+				index = nematode.size();
+				draw();
+			}
+			
 		}	
 		if (keyCode == RIGHT)
 		{
-			index += 1;
-			drawNematode(index);	
+			if(index != nematode.size())
+			{	
+				index += 1;
+				draw();
+			}
+			else
+			{
+				index = 0;
+				draw();
+			}
+				
 		}	
 	}
 
@@ -52,9 +70,9 @@ public class NematodeVisualiser extends PApplet
 		nematode.toString();
 	}
 
-	void drawNematode(int index)
-	{
-		
+
+	public void draw()
+	{	
 		background(0);
 		stroke(255, 0, 255);
 		noFill();
@@ -120,12 +138,5 @@ public class NematodeVisualiser extends PApplet
 				text(n.getName(), 20, 20);
 			}
 		}
-	}
-
-
-	public void draw()
-	{	
-		background(0);
-		drawNematode(index);
 	}
 }
