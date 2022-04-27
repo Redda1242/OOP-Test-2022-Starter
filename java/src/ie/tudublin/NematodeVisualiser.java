@@ -10,11 +10,19 @@ public class NematodeVisualiser extends PApplet
 {
 
 	ArrayList<Nematode> nematode = new ArrayList<Nematode>();
+	int index = 0;
 	public void keyPressed()
 	{		
 		if (keyCode == LEFT)
 		{
-		}		
+			index -= 1;
+			drawNematode(index);
+		}	
+		if (keyCode == RIGHT)
+		{
+			index += 1;
+			drawNematode(index);	
+		}	
 	}
 
 
@@ -96,13 +104,13 @@ public class NematodeVisualiser extends PApplet
 				if(n.getGender().contains("f"))
 				{
 					
-					circle(xPosition,yPosition , 10);
+					circle(xPosition, yPosition-15, 10);
 				}
 
 				if(n.getGender().contains("h"))
 				{
 					
-					circle(xPosition, yPosition, 10);
+					circle(xPosition, yPosition-15, 10);
 					line(xPosition, yPosition, xPosition, yPosition+20);
 					circle(xPosition,yPosition+20 , 10);
 				
@@ -117,6 +125,7 @@ public class NematodeVisualiser extends PApplet
 
 	public void draw()
 	{	
-		drawNematode(7);
+		background(0);
+		drawNematode(index);
 	}
 }
