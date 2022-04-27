@@ -22,14 +22,14 @@ public class NematodeVisualiser extends PApplet
 			}
 			else
 			{
-				index = nematode.size();
+				index = nematode.size() - 1;
 				draw();
 			}
 			
 		}	
 		if (keyCode == RIGHT)
 		{
-			if(index != nematode.size())
+			if(index != nematode.size() - 1)
 			{	
 				index += 1;
 				draw();
@@ -79,7 +79,10 @@ public class NematodeVisualiser extends PApplet
         textAlign(CENTER, CENTER);
         textSize(20);
 		float xPosition = width/2;
-		float yPosition = 80;
+		float yPosition = height/3;
+
+		color(random(255));
+		colorMode(RGB);
 
 		//line(xPosition, yPosition, xPosition+100, yPosition+200);
 		//rect(xPosition, yPosition, 220, 100);
@@ -88,9 +91,11 @@ public class NematodeVisualiser extends PApplet
 		{
 			n.toString();
 			
-			yPosition = 80;
+			yPosition = height/3;
 			if(index == nematode.indexOf(n))
 			{	
+				
+				text(n.getName(), xPosition , yPosition- 50);
 				if(n.getEyes() == 1)
 					{
 						line(xPosition-10, yPosition -8, xPosition - 20, yPosition-20);
@@ -135,7 +140,7 @@ public class NematodeVisualiser extends PApplet
 				}
 
 				
-				text(n.getName(), 20, 20);
+				
 			}
 		}
 	}
