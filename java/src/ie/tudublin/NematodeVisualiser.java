@@ -39,10 +39,41 @@ public class NematodeVisualiser extends PApplet
             Nematode n = new Nematode(r);
             nematode.add(n);
         }
+
+		nematode.toString();
+	}
+
+	void drawNematode(int index)
+	{
+		
+		background(0);
+		stroke(255, 0, 255);
+		noFill();
+        textAlign(CENTER, CENTER);
+        textSize(20);
+		int xPosition = width/2;
+		int yPosition = 80;
+
+		//line(xPosition, yPosition, xPosition+100, yPosition+200);
+		//rect(xPosition, yPosition, 220, 100);
+		
+		for(Nematode n: nematode)
+		{
+			yPosition = 80;
+			if(index == nematode.indexOf(n))
+			for(int i = 0; i < n.getLength(); i++)
+			{
+				stroke(255, 0, 255);
+				circle(xPosition, yPosition, 20);
+				yPosition = yPosition * 2;
+
+			}
+		}
 	}
 
 
 	public void draw()
 	{	
+		
 	}
 }
