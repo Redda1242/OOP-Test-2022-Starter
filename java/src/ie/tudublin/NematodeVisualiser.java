@@ -64,7 +64,14 @@ public class NematodeVisualiser extends PApplet
 			
 			yPosition = 80;
 			if(index == nematode.indexOf(n))
-				text(n.getName(), 20, 20);
+			{	
+				if(n.getEyes() == 1)
+					{
+						line(xPosition-10, yPosition -8, xPosition - 20, yPosition-20);
+						circle(xPosition - 20,yPosition-20 , 10);
+						line(xPosition+10, yPosition -8, xPosition +20, yPosition-20);
+						circle(xPosition + 20,yPosition-20 , 10);
+					}
 				for(int i = 0; i < n.getLength(); i++)
 				{
 					if(n.getLimbs() == 1)
@@ -73,11 +80,16 @@ public class NematodeVisualiser extends PApplet
 						line(xPosition+10, yPosition, xPosition +20, yPosition);
 
 					}
+					
 					stroke(255, 0, 255);
 					circle(xPosition, yPosition, 20);
 					yPosition = yPosition +20;
 
 				}
+
+				
+				text(n.getName(), 20, 20);
+			}
 		}
 	}
 
